@@ -66,23 +66,23 @@ nav a {
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* Buttons */
+/* Button */
 .btn {
     background: linear-gradient(135deg, #238636, #2ea043);
     color: white;
     padding: 12px 18px;
     border-radius: 6px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
     font-weight: 600;
-    border: 1px solid transparent;
 }
 
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    border-color: #3fb950;
 }
 
 /* Skills */
@@ -107,7 +107,6 @@ h2 {
     padding-left: 10px;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 30px;
@@ -141,12 +140,10 @@ footer {
         <h2>About Me</h2>
         <p>
             I am a cybersecurity enthusiast focused on penetration testing, vulnerability assessment, and secure system design.
-            I enjoy identifying security weaknesses and understanding how systems can be exploited and protected.
+            I analyze systems to identify weaknesses and simulate real-world attacks to improve security.
         </p>
-
         <p>
-            I have experience working with web vulnerabilities, network security, and ethical hacking techniques.
-            My goal is to continuously improve my skills in offensive security and build strong defensive strategies.
+            My passion lies in ethical hacking, exploring how systems can be compromised, and then strengthening them against real threats.
         </p>
     </section>
 
@@ -154,10 +151,6 @@ footer {
     <section class="fade-up">
         <h2>Skills</h2>
         <div class="skills">
-            <span>C</span>
-            <span>C++</span>
-            <span>HTML</span>
-            <span>Java</span>
             <span>Network Security</span>
             <span>Wireshark</span>
             <span>Kali Linux</span>
@@ -168,15 +161,14 @@ footer {
 
     <!-- Vulnerabilities -->
     <section class="fade-up">
-        <h2>Vulnerabilities I Worked On</h2>
-
+        <h2>Vulnerabilities</h2>
         <div class="card">
             <ul>
-                <li><strong>SQL Injection (SQLi)</strong></li>
-                <li><strong>Cross-Site Scripting (XSS)</strong></li>
-                <li><strong>Cross-Site Request Forgery (CSRF)</strong></li>
-                <li><strong>Authentication Bypass</strong></li>
-                <li><strong>Information Disclosure</strong></li>
+                <li>SQL Injection</li>
+                <li>Cross-Site Scripting (XSS)</li>
+                <li>CSRF</li>
+                <li>Authentication Bypass</li>
+                <li>Information Disclosure</li>
             </ul>
         </div>
     </section>
@@ -192,7 +184,7 @@ footer {
 
         <div class="card">
             <h3>Network Analysis</h3>
-            <p>Analyzed network traffic using Wireshark.</p>
+            <p>Analyzed traffic and detected attacks.</p>
         </div>
 
         <div class="card">
@@ -201,19 +193,39 @@ footer {
         </div>
     </section>
 
-    <!-- Strengths -->
+    <!-- Professional Strengths -->
     <section class="fade-up">
         <h2>Professional Strengths</h2>
 
         <div class="card">
             <p><strong>Analytical Thinking</strong><br>
-            Ability to analyze systems and detect weaknesses.</p>
+            Presenting insights in a simple and persuasive way.</p>
 
             <p><strong>Cybersecurity Knowledge</strong><br>
-            Strong understanding of offensive and defensive security.</p>
+            Strong understanding of penetration testing and defense.</p>
+        </div>
+    </section>
 
-            <p><strong>Penetration Testing</strong><br>
-            Experience identifying and exploiting vulnerabilities.</p>
+    <!-- Programming Languages -->
+    <section class="fade-up">
+        <h2>Programming Languages</h2>
+        <div class="skills">
+            <span>C</span>
+            <span>C++</span>
+            <span>HTML</span>
+            <span>Java</span>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="fade-up">
+        <h2>Tools</h2>
+        <div class="skills">
+            <span>Wireshark</span>
+            <span>Nmap</span>
+            <span>Burp Suite</span>
+            <span>Kali Linux</span>
+            <span>Metasploit</span>
         </div>
     </section>
 
@@ -221,7 +233,10 @@ footer {
     <section id="contact" class="fade-up">
         <h2>Contact</h2>
         <p>Email: janaamuhamed008@gmail.com</p>
-        <a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">View Profile</a>
+
+        <a class="btn" href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank">
+            View LinkedIn Profile
+        </a>
     </section>
 
     <footer>
