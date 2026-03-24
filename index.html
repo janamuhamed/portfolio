@@ -1,281 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jana Muhamed | Cybersecurity Portfolio</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-main: #c9d1d9;
-            --accent-color: #238636;
-            --header-color: #58a6ff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jana Mohamed | Portfolio</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    scroll-behavior: smooth;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
 
-        header {
-            text-align: center;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 40px;
-        }
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
 
-        h1, h2, h3 {
-            font-family: 'Courier New', monospace;
-        }
+/* Layout */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 20px;
+}
 
-        h1 {
-            color: #fff;
-            font-size: 2.5em;
-        }
+/* ===== ANIMATIONS ===== */
 
-        .title {
-            color: var(--header-color);
-            font-weight: bold;
-        }
+/* fade + slide up */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
 
-        .section-title {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
-            margin-top: 50px;
-            color: #fff;
-        }
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+/* card hover animation */
+.card {
+    background: #161b22;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 20px;
-            transition: 0.3s;
-        }
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid #238636;
+}
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 0 15px rgba(35, 134, 54, 0.4);
-        }
+/* button */
+.btn {
+    background: linear-gradient(135deg, #238636, #2ea043);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
 
-        .project-card h3 {
-            color: var(--header-color);
-        }
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
 
-        .project-card p {
-            font-size: 0.9em;
-            color: #8b949e;
-        }
+/* skills */
+.skills span {
+    background: #21262d;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
 
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.85em;
-            margin-top: 10px;
-        }
+.skills span:hover {
+    transform: scale(1.2) rotate(2deg);
+    background: #238636;
+}
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+/* text */
+h1 {
+    font-size: 42px;
+}
 
-        .skill-tag {
-            background: #21262d;
-            border: 1px solid #30363d;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-        }
+h2 {
+    border-left: 4px solid #238636;
+    padding-left: 10px;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #8b949e;
-        }
-    </style>
+/* footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #8b949e;
+}
+</style>
 </head>
+
 <body>
+
+<!-- Navbar -->
+<nav>
+    <div>Jana</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
 <div class="container">
 
-    <header>
-        <h1>Jana Muhamed</h1>
-        <div class="title">Telecom & Cybersecurity Engineer</div>
-        <p>Passionate about penetration testing, vulnerability assessment, and network security.</p>
-    </header>
-
-    <h2 class="section-title">About Me</h2>
-    <p>
-        Cybersecurity enthusiast with a background in telecommunications engineering.
-        Interested in penetration testing, web security, and network analysis.
-        Currently building hands-on labs and solving real-world security challenges.
-    </p>
-
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-list">
-        <span class="skill-tag">Network Security</span>
-        <span class="skill-tag">Wireshark</span>
-        <span class="skill-tag">Kali Linux</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Penetration Testing</span>
-        <span class="skill-tag">Nmap</span>
+    <!-- Hero -->
+    <div class="fade-up">
+        <h1>Jana Mohamed</h1>
+        <p>Cybersecurity Engineer</p>
+        <a class="btn" href="#projects">View Projects</a>
     </div>
 
-    <h2 class="section-title">Tools & Technologies</h2>
-    <div class="skills-list">
-        <span class="skill-tag">Burp Suite</span>
-        <span class="skill-tag">OWASP ZAP</span>
-        <span class="skill-tag">Metasploit</span>
-        <span class="skill-tag">GitHub</span>
-    </div>
-<h2 class="section-title">Security Experience</h2>
+    <!-- About -->
+    <section id="about" class="fade-up">
+        <h2>About Me</h2>
+        <p>Cybersecurity engineer focused on penetration testing, vulnerability assessment, and secure systems.</p>
+    </section>
 
-<div class="projects-grid">
+    <!-- Skills -->
+    <section class="fade-up">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Network Security</span>
+            <span>Wireshark</span>
+            <span>Kali Linux</span>
+            <span>Python</span>
+            <span>Nmap</span>
+            <span>Burp Suite</span>
+        </div>
+    </section>
 
-    <div class="project-card">
-        <h3>SQL Injection (SQLi)</h3>
-        <p>
-            Identified SQL Injection vulnerability by manipulating input fields and bypassing authentication.
-            Extracted sensitive data from the database using UNION-based queries and error-based techniques.
-            Applied input validation and prepared statements to mitigate the vulnerability.
-        </p>
-    </div>
+    <!-- Projects -->
+    <section id="projects" class="fade-up">
+        <h2>Projects</h2>
 
-    <div class="project-card">
-        <h3>Broken Access Control</h3>
-        <p>
-            Discovered improper access control allowing unauthorized users to access restricted resources.
-            Performed privilege escalation by modifying request parameters and accessing admin-only endpoints.
-            Secured the system by enforcing proper authorization checks on the server side.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Cross-Site Scripting (XSS)</h3>
-        <p>
-            Exploited both reflected and stored XSS vulnerabilities by injecting malicious scripts into web inputs.
-            Demonstrated session hijacking and defacement scenarios.
-            Implemented output encoding and input sanitization to prevent attacks.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Cross-Site Request Forgery (CSRF)</h3>
-        <p>
-            Crafted malicious requests that forced authenticated users to perform unintended actions.
-            Exploited missing CSRF protections and demonstrated impact.
-            Mitigated using CSRF tokens and proper request validation.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Information Disclosure</h3>
-        <p>
-            Identified sensitive information exposure through verbose error messages and misconfigured responses.
-            Extracted internal system details and database structure.
-            Secured the system by disabling debug messages and restricting error exposure.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Authentication & Session Issues</h3>
-        <p>
-            Identified weak authentication mechanisms and session management flaws.
-            Performed brute-force attempts and session hijacking techniques.
-            Improved security using strong password policies and secure session handling.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>CORS Misconfiguration</h3>
-        <p>
-            Detected improper Cross-Origin Resource Sharing (CORS) policies allowing unauthorized domains access.
-            Evaluated impact of cross-origin data exposure.
-            Fixed by restricting allowed origins and enforcing secure headers.
-        </p>
-    </div>
-
-</div>
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-
-        <div class="project-card">
+        <div class="card">
             <h3>SQL Injection Lab</h3>
-            <p>
-                Identified SQL Injection vulnerability using UNION-based attack.
-                Extracted database information and secured the application using prepared statements.
-                Tools: Burp Suite, MySQL.
-            </p>
-            <a href="#" class="btn">View Report</a>
+            <p>Detected and secured SQL injection vulnerabilities.</p>
         </div>
 
-        <div class="project-card">
-            <h3>Network Traffic Analysis</h3>
-            <p>
-                Analyzed PCAP files using Wireshark to detect ARP Spoofing attack
-                and identified malicious traffic patterns.
-            </p>
-            <a href="#" class="btn">View Lab</a>
+        <div class="card">
+            <h3>Network Analysis</h3>
+            <p>Analyzed traffic and detected attacks.</p>
         </div>
 
-        <div class="project-card">
+        <div class="card">
             <h3>Python Port Scanner</h3>
-            <p>
-                Developed a Python-based port scanner to detect open ports
-                and identify running services on target machines.
-            </p>
-            <a href="#" class="btn">View Code</a>
+            <p>Built a tool to scan open ports.</p>
         </div>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact" class="fade-up">
+        <h2>Contact</h2>
+       <p>Email: janaamuhamed008@gmail.com</p>
+
+<p>
+LinkedIn: 
+<a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">
+    View LinkedIn Profile
+</a>
+</p>
+    </section>
+<section class="fade-up">
+    <h2>Professional Profile</h2>
+
+    <div class="card">
+        <h3>LinkedIn</h3>
+        <p>Check my professional background, experience, and connections.</p>
+
+        <a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">
+            Open Profile
+        </a>
     </div>
-
-    <h2 class="section-title">Hire Me</h2>
-    <p>
-        Available for freelance cybersecurity tasks including penetration testing,
-        vulnerability assessment, and network security analysis.
-    </p>
-
- <h2 class="section-title">Contact</h2>
-
-<p>
-    📧 Email: 
-    <a href="mailto:janaamuhamed008@gmail.com" style="color:#58a6ff;">
-        janaamuhamed008@gmail.com
-    </a>
-</p>
-
-<p>
-    💼 LinkedIn: 
-    <a href="https://www.linkedin.com/in/janamuhamed" target="_blank" style="color:#58a6ff;">
-        www.linkedin.com/in/janamuhamed
-    </a>
-</p>
-
+</section>
     <footer>
-        <p>© 2026 Jana Mohamed | Cybersecurity Portfolio</p>
+        © 2026 Jana Mohamed
     </footer>
 
 </div>
+
+<script>
+/* Scroll animation trigger */
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
