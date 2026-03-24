@@ -119,7 +119,7 @@
 <div class="container">
 
     <header>
-        <h1>Jana Mohamed</h1>
+        <h1>Jana Muhamed</h1>
         <div class="title">Telecom & Cybersecurity Engineer</div>
         <p>Passionate about penetration testing, vulnerability assessment, and network security.</p>
     </header>
@@ -153,43 +153,65 @@
 <div class="projects-grid">
 
     <div class="project-card">
+        <h3>SQL Injection (SQLi)</h3>
+        <p>
+            Identified SQL Injection vulnerability by manipulating input fields and bypassing authentication.
+            Extracted sensitive data from the database using UNION-based queries and error-based techniques.
+            Applied input validation and prepared statements to mitigate the vulnerability.
+        </p>
+    </div>
+
+    <div class="project-card">
+        <h3>Broken Access Control</h3>
+        <p>
+            Discovered improper access control allowing unauthorized users to access restricted resources.
+            Performed privilege escalation by modifying request parameters and accessing admin-only endpoints.
+            Secured the system by enforcing proper authorization checks on the server side.
+        </p>
+    </div>
+
+    <div class="project-card">
         <h3>Cross-Site Scripting (XSS)</h3>
         <p>
-            Discovered reflected and stored XSS vulnerabilities by injecting malicious scripts
-            into input fields. Demonstrated session hijacking and implemented input sanitization
-            to mitigate the issue.
+            Exploited both reflected and stored XSS vulnerabilities by injecting malicious scripts into web inputs.
+            Demonstrated session hijacking and defacement scenarios.
+            Implemented output encoding and input sanitization to prevent attacks.
         </p>
     </div>
 
     <div class="project-card">
         <h3>Cross-Site Request Forgery (CSRF)</h3>
         <p>
-            Exploited CSRF vulnerability by crafting malicious requests that execute actions
-            on behalf of authenticated users. Implemented CSRF tokens to secure the application.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Broken Authentication</h3>
-        <p>
-            Identified weak authentication mechanisms allowing brute-force attacks and session misuse.
-            Applied strong password policies and session management improvements.
+            Crafted malicious requests that forced authenticated users to perform unintended actions.
+            Exploited missing CSRF protections and demonstrated impact.
+            Mitigated using CSRF tokens and proper request validation.
         </p>
     </div>
 
     <div class="project-card">
         <h3>Information Disclosure</h3>
         <p>
-            Found sensitive data exposure through error messages and misconfigured servers.
-            Prevented leakage by handling errors properly and securing server configurations.
+            Identified sensitive information exposure through verbose error messages and misconfigured responses.
+            Extracted internal system details and database structure.
+            Secured the system by disabling debug messages and restricting error exposure.
         </p>
     </div>
 
     <div class="project-card">
-        <h3>Cross-Origin Security Issues (CORS)</h3>
+        <h3>Authentication & Session Issues</h3>
         <p>
-            Analyzed misconfigured CORS policies allowing unauthorized domains to access resources.
-            Fixed by restricting allowed origins and methods.
+            Identified weak authentication mechanisms and session management flaws.
+            Performed brute-force attempts and session hijacking techniques.
+            Improved security using strong password policies and secure session handling.
+        </p>
+    </div>
+
+    <div class="project-card">
+        <h3>CORS Misconfiguration</h3>
+        <p>
+            Detected improper Cross-Origin Resource Sharing (CORS) policies allowing unauthorized domains access.
+            Evaluated impact of cross-origin data exposure.
+            Fixed by restricting allowed origins and enforcing secure headers.
         </p>
     </div>
 
