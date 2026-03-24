@@ -14,7 +14,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Navbar */
 nav {
     position: fixed;
     top: 0;
@@ -33,7 +32,6 @@ nav a {
     text-decoration: none;
 }
 
-/* Layout */
 .container {
     max-width: 900px;
     margin: auto;
@@ -87,11 +85,6 @@ nav a {
     border-color: #3fb950;
 }
 
-.btn:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
 /* Skills */
 .skills span {
     background: #21262d;
@@ -108,10 +101,7 @@ nav a {
 }
 
 /* Text */
-h1 {
-    font-size: 42px;
-}
-
+h1 { font-size: 42px; }
 h2 {
     border-left: 4px solid #238636;
     padding-left: 10px;
@@ -128,7 +118,6 @@ footer {
 
 <body>
 
-<!-- Navbar -->
 <nav>
     <div>Jana</div>
     <div>
@@ -143,27 +132,52 @@ footer {
     <!-- Hero -->
     <div class="fade-up">
         <h1>Jana Mohamed</h1>
-        <p>Cybersecurity Engineer</p>
+        <p>Cybersecurity Engineer | Penetration Tester</p>
         <a class="btn" href="#projects">View Projects</a>
-        <a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">LinkedIn</a>
     </div>
 
     <!-- About -->
     <section id="about" class="fade-up">
         <h2>About Me</h2>
-        <p>Cybersecurity engineer focused on penetration testing, vulnerability assessment, and secure systems.</p>
+        <p>
+            I am a cybersecurity enthusiast focused on penetration testing, vulnerability assessment, and secure system design.
+            I enjoy identifying security weaknesses and understanding how systems can be exploited and protected.
+        </p>
+
+        <p>
+            I have experience working with web vulnerabilities, network security, and ethical hacking techniques.
+            My goal is to continuously improve my skills in offensive security and build strong defensive strategies.
+        </p>
     </section>
 
     <!-- Skills -->
     <section class="fade-up">
         <h2>Skills</h2>
         <div class="skills">
+            <span>C</span>
+            <span>C++</span>
+            <span>HTML</span>
+            <span>Java</span>
             <span>Network Security</span>
             <span>Wireshark</span>
             <span>Kali Linux</span>
-            <span>Python</span>
             <span>Nmap</span>
             <span>Burp Suite</span>
+        </div>
+    </section>
+
+    <!-- Vulnerabilities -->
+    <section class="fade-up">
+        <h2>Vulnerabilities I Worked On</h2>
+
+        <div class="card">
+            <ul>
+                <li><strong>SQL Injection (SQLi)</strong></li>
+                <li><strong>Cross-Site Scripting (XSS)</strong></li>
+                <li><strong>Cross-Site Request Forgery (CSRF)</strong></li>
+                <li><strong>Authentication Bypass</strong></li>
+                <li><strong>Information Disclosure</strong></li>
+            </ul>
         </div>
     </section>
 
@@ -173,33 +187,33 @@ footer {
 
         <div class="card">
             <h3>SQL Injection Lab</h3>
-            <p>Detected and secured SQL injection vulnerabilities.</p>
+            <p>Detected and mitigated SQL injection vulnerabilities.</p>
         </div>
 
         <div class="card">
             <h3>Network Analysis</h3>
-            <p>Analyzed traffic and detected attacks.</p>
+            <p>Analyzed network traffic using Wireshark.</p>
         </div>
 
         <div class="card">
-            <h3>Python Port Scanner</h3>
+            <h3>Port Scanner</h3>
             <p>Built a tool to scan open ports.</p>
         </div>
     </section>
 
-    <!-- Professional Strengths -->
+    <!-- Strengths -->
     <section class="fade-up">
         <h2>Professional Strengths</h2>
 
         <div class="card">
             <p><strong>Analytical Thinking</strong><br>
-            Presenting insights in a simple and persuasive way</p>
+            Ability to analyze systems and detect weaknesses.</p>
 
-            <p><strong>Network Infrastructure</strong><br>
-            NTI</p>
+            <p><strong>Cybersecurity Knowledge</strong><br>
+            Strong understanding of offensive and defensive security.</p>
 
-            <p><strong>Cybersecurity Track</strong><br>
-            Microsoft × Sprints</p>
+            <p><strong>Penetration Testing</strong><br>
+            Experience identifying and exploiting vulnerabilities.</p>
         </div>
     </section>
 
@@ -207,7 +221,7 @@ footer {
     <section id="contact" class="fade-up">
         <h2>Contact</h2>
         <p>Email: janaamuhamed008@gmail.com</p>
-        <a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">View LinkedIn</a>
+        <a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">View Profile</a>
     </section>
 
     <footer>
