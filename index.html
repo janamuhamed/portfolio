@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jana Muhamed | Portfolio</title>
+<title>Jana Mohamed | Portfolio</title>
 
 <style>
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #0d1117;
-    color: #c9d1d9;
+    background: #0b1220;
+    color: #e6edf3;
     scroll-behavior: smooth;
 }
 
@@ -21,15 +21,19 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
+    background: rgba(10,20,40,0.6);
+    backdrop-filter: blur(12px);
     z-index: 1000;
 }
 
 nav a {
-    color: white;
+    color: #e6edf3;
     margin-left: 15px;
     text-decoration: none;
+}
+
+nav a:hover {
+    color: #58a6ff;
 }
 
 .container {
@@ -38,7 +42,6 @@ nav a {
     padding: 120px 20px;
 }
 
-/* Animations */
 .fade-up {
     opacity: 0;
     transform: translateY(50px);
@@ -50,60 +53,46 @@ nav a {
     transform: translateY(0);
 }
 
-/* Cards */
 .card {
-    background: #161b22;
+    background: #111a2e;
     padding: 20px;
     margin: 15px 0;
-    border-radius: 10px;
-    border: 1px solid #30363d;
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid #1f2a44;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: #238636;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border-color: #1f6feb;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* Button */
 .btn {
-    background: linear-gradient(135deg, #238636, #2ea043);
+    background: linear-gradient(135deg, #1f6feb, #388bfd);
     color: white;
-    padding: 12px 18px;
-    border-radius: 6px;
+    padding: 12px 20px;
+    border-radius: 8px;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
-    transition: all 0.3s ease;
     font-weight: 600;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-/* Skills */
 .skills span {
-    background: #21262d;
+    background: #1a2742;
     padding: 6px 12px;
     border-radius: 20px;
     margin: 5px;
     display: inline-block;
-    transition: 0.3s;
 }
 
 .skills span:hover {
-    background: #238636;
-    transform: scale(1.1);
+    background: #1f6feb;
 }
 
-/* Text */
-h1 { font-size: 42px; }
+h1 { font-size: 44px; }
+
 h2 {
-    border-left: 4px solid #238636;
+    border-left: 4px solid #1f6feb;
     padding-left: 10px;
 }
 
@@ -128,85 +117,46 @@ footer {
 
 <div class="container">
 
-    <!-- Hero -->
     <div class="fade-up">
         <h1>Jana Mohamed</h1>
         <p>Cybersecurity Engineer | Penetration Tester</p>
-        <a class="btn" href="#projects">View Projects</a>
     </div>
 
-    <!-- About -->
     <section id="about" class="fade-up">
         <h2>About Me</h2>
-        <p>
-            I am a cybersecurity enthusiast focused on penetration testing, vulnerability assessment, and secure system design.
-            I analyze systems to identify weaknesses and simulate real-world attacks to improve security.
-        </p>
-        <p>
-            My passion lies in ethical hacking, exploring how systems can be compromised, and then strengthening them against real threats.
-        </p>
+        <p>Cybersecurity engineer focused on penetration testing and vulnerability assessment.</p>
     </section>
 
-    <!-- Skills -->
-    <section class="fade-up">
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>Network Security</span>
-            <span>Wireshark</span>
-            <span>Kali Linux</span>
-            <span>Nmap</span>
-            <span>Burp Suite</span>
-        </div>
-    </section>
-
-    <!-- Vulnerabilities -->
     <section class="fade-up">
         <h2>Vulnerabilities</h2>
         <div class="card">
             <ul>
-                <li>SQL Injection</li>
+                <li>SQL Injection (SQLi)</li>
                 <li>Cross-Site Scripting (XSS)</li>
-                <li>CSRF</li>
+                <li>Cross-Site Request Forgery (CSRF)</li>
                 <li>Authentication Bypass</li>
-                <li>Information Disclosure</li>
+                <li>Command Injection</li>
+                <li>Local File Inclusion (LFI)</li>
+                <li>Remote File Inclusion (RFI)</li>
+                <li>Broken Access Control</li>
+                <li>Security Misconfiguration</li>
+                <li>Insecure Deserialization</li>
+                <li>Session Hijacking</li>
+                <li>Directory Traversal</li>
             </ul>
         </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="fade-up">
-        <h2>Projects</h2>
-
-        <div class="card">
-            <h3>SQL Injection Lab</h3>
-            <p>Detected and mitigated SQL injection vulnerabilities.</p>
-        </div>
-
-        <div class="card">
-            <h3>Network Analysis</h3>
-            <p>Analyzed traffic and detected attacks.</p>
-        </div>
-
-        <div class="card">
-            <h3>Port Scanner</h3>
-            <p>Built a tool to scan open ports.</p>
-        </div>
-    </section>
-
-    <!-- Professional Strengths -->
     <section class="fade-up">
         <h2>Professional Strengths</h2>
-
         <div class="card">
-            <p><strong>Analytical Thinking</strong><br>
-            Presenting insights in a simple and persuasive way.</p>
-
-            <p><strong>Cybersecurity Knowledge</strong><br>
-            Strong understanding of penetration testing and defense.</p>
+            <p><strong>Penetration Testing</strong><br>Identifying and exploiting vulnerabilities.</p>
+            <p><strong>Vulnerability Assessment</strong><br>Detecting system weaknesses.</p>
+            <p><strong>Security Mindset</strong><br>Thinking like an attacker.</p>
+            <p><strong>Network Security</strong><br>Analyzing traffic and protocols.</p>
         </div>
     </section>
 
-    <!-- Programming Languages -->
     <section class="fade-up">
         <h2>Programming Languages</h2>
         <div class="skills">
@@ -217,7 +167,6 @@ footer {
         </div>
     </section>
 
-    <!-- Tools -->
     <section class="fade-up">
         <h2>Tools</h2>
         <div class="skills">
@@ -229,7 +178,6 @@ footer {
         </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="fade-up">
         <h2>Contact</h2>
         <p>Email: janaamuhamed008@gmail.com</p>
