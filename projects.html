@@ -107,3 +107,34 @@ footer {
     <a href="certificates.html">Certificates</a>
     <a href="contact.html">Contact</a>
 </nav>
+
+
+
+
+
+
+
+
+
+        <footer>
+        © 2026 Jana Muhamed
+    </footer>
+
+</div>
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
