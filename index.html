@@ -210,16 +210,26 @@ Your security is my priority.
     <h2>Projects</h2>
 
     <div class="card">
-        <h3>Web Application Penetration Test</h3>
-        <p><strong>Scope:</strong> Tested a sample web application for common vulnerabilities.</p>
-        <p><strong>Findings:</strong></p>
-        <ul>
-            <li>SQL Injection vulnerability in login form</li>
-            <li>Reflected Cross-Site Scripting (XSS)</li>
-            <li>Weak input validation</li>
-        </ul>
-        <p><strong>Tools Used:</strong> Burp Suite, SQLmap</p>
-        <p><strong>Outcome:</strong> Identified critical risks and provided remediation steps.</p>
+        <h2>🔐 Information Disclosure Vulnerability Assessment Project</h2>
+  
+  <p class="subtitle">
+    A comprehensive security assessment was conducted to identify information disclosure vulnerabilities within the web application. 
+    The testing revealed multiple weaknesses that collectively expose sensitive data and internal system details, significantly increasing the risk of further exploitation.
+  </p>
+  <div class="finding">
+    <h3>Information Disclosure Vulnerabilities (Multiple Attack Vectors)</h3>
+    <p><strong>Scope:</strong> 
+      The assessment focused on identifying improper handling of sensitive information across the application, including error handling mechanisms, exposed development resources, backup files, authentication processes, and version control artifacts.
+    </p> 
+    <p><strong>Finding:</strong> 
+      The application suffers from multiple information disclosure vulnerabilities across different components. 
+      These include verbose error messages revealing internal system details, exposed debug functionality, accessible backup files containing source code, leakage of authentication-related information enabling access control bypass, and publicly accessible version control data.
+    </p>
+    <p>
+      Collectively, these issues allow an attacker to gather critical intelligence about the application's internal structure, technologies, and security mechanisms. 
+      This significantly lowers the attack complexity and increases the likelihood of successful exploitation, including unauthorized access and potential full system compromise.
+    </p>
+    <p><strong>Risk Level:</strong> <span class="critical">Critical</span></p>
     </div>
 
     <div class="card">
