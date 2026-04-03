@@ -108,11 +108,18 @@ footer {
     padding: 30px;
     color: #8b949e;
 }
+
+    #matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 </style>
 </head>
 
 <body>
-
+<canvas id="matrix"></canvas>
 <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
@@ -148,6 +155,7 @@ footer {
 </div>
 
 <script>
+/* ===== YOUR FADE-UP ANIMATION (UNCHANGED) ===== */
 const elements = document.querySelectorAll('.fade-up');
 
 const observer = new IntersectionObserver(entries => {
@@ -159,6 +167,40 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 elements.forEach(el => observer.observe(el));
+
+/* ===== MATRIX BACKGROUND ===== */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+const drops = Array(Math.floor(columns)).fill(1);
+
+function draw() {
+    ctx.fillStyle = "rgba(11,18,32,0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#58a6ff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 35);
 </script>
 
 </body>
