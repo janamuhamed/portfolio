@@ -261,18 +261,39 @@ Your security is my priority.
         <p><strong>Outcome:</strong> Improved network security posture with hardening recommendations.</p>
     </div>
 
-    <div class="card">
-        <h3>Authentication Security Testing</h3>
-        <p><strong>Scope:</strong> Tested login and session mechanisms.</p>
-        <p><strong>Findings:</strong></p>
-        <ul>
-            <li>Authentication bypass issue</li>
-            <li>Session fixation vulnerability</li>
-            <li>Weak password policy</li>
-        </ul>
-        <p><strong>Tools Used:</strong> Burp Suite</p>
-        <p><strong>Outcome:</strong> Strengthened authentication and session management.</p>
-    </div>
+<section id="auth-security-project">
+  <h2>🔐 Authentication Security Assessment & Brute Force Analysis</h2>
+  
+  <p class="subtitle">
+    A comprehensive security assessment was conducted on the authentication mechanisms of the target application. 
+    The objective was to evaluate the robustness of brute force protection, account enumeration defenses, and login request handling.
+  </p>
+
+  
+  <div class="finding">
+    <h3>Authentication Vulnerabilities (Brute Force & Enumeration)</h3>
+    <p><strong>Scope:</strong> 
+      The assessment focused on analyzing the login functionality, including brute force protection mechanisms, username enumeration behavior, and handling of multiple credential attempts within a single request.
+    </p>
+    <p><strong>Finding:</strong> 
+      The application exhibits multiple weaknesses in its authentication controls. 
+      These include inadequate brute force protection allowing repeated login attempts, inconsistent handling of IP-based blocking mechanisms, and the ability to bypass rate-limiting by manipulating request structures.
+    </p>
+    <p>
+      Additionally, the system leaks information during login attempts that enables username enumeration, such as different error messages or response behaviors for valid and invalid usernames. 
+      This significantly aids attackers in identifying valid accounts and targeting them for further attacks.
+    </p>
+    <p>
+      Furthermore, the application fails to properly restrict multiple credential submissions within a single request, allowing attackers to bypass brute force protections and attempt multiple passwords simultaneously.
+    </p>
+    <p><strong>Impact:</strong> 
+      These vulnerabilities enable attackers to perform efficient brute force attacks, enumerate valid users, and potentially gain unauthorized access to user accounts. 
+      This can lead to full account compromise and further exploitation of the application.
+    </p>
+    <p><strong>Risk Level:</strong> <span class="critical">Critical</span></p>
+  </div>
+
+</section>
 
 </section>
 
