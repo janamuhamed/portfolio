@@ -102,7 +102,6 @@ footer {
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="skills.html">Skills</a>
     <a href="projects.html">Projects</a>
     <a href="certificates.html">Certificates</a>
     <a href="contact.html">Contact</a>
@@ -205,124 +204,6 @@ Your security is my priority.
 
 
 
-    <section id="projects" class="fade-up">
-    <h2>Projects</h2>
-
-    <div class="card">
-        
-         <div class="card">
-        <h2>🔐 Information Disclosure Vulnerability Assessment Project</h2>
-  
-  <p class="subtitle">
-    A comprehensive security assessment was conducted to identify information disclosure vulnerabilities within the web application. 
-    The testing revealed multiple weaknesses that collectively expose sensitive data and internal system details, significantly increasing the risk of further exploitation.
-  </p>
-  <div class="finding">
-    <h3>Information Disclosure Vulnerabilities (Multiple Attack Vectors)</h3>
-    <p><strong>Scope:</strong> 
-      The assessment focused on identifying improper handling of sensitive information across the application, including error handling mechanisms, exposed development resources, backup files, authentication processes, and version control artifacts.
-    </p> 
-    <p><strong>Finding:</strong> 
-      The application suffers from multiple information disclosure vulnerabilities across different components. 
-      These include verbose error messages revealing internal system details, exposed debug functionality, accessible backup files containing source code, leakage of authentication-related information enabling access control bypass, and publicly accessible version control data.
-    </p>
-    <p>
-      Collectively, these issues allow an attacker to gather critical intelligence about the application's internal structure, technologies, and security mechanisms. 
-      This significantly lowers the attack complexity and increases the likelihood of successful exploitation, including unauthorized access and potential full system compromise.
-    </p>
-    <p><strong>Risk Level:</strong> <span class="critical">Critical</span></p>
-       <p><strong>Tools Used:</strong> Burp Suite</p>
-    </div>
-            <div class="report-section">
-  <h3>📄 Information Disclosure Vulnerability Assessment & Security Analysis Report</h3>
-  <p class="report-desc">
-    This report contains detailed findings, exploitation steps, and supporting evidence related to identified information disclosure vulnerabilities.
-  </p>
-  <a href="reports/Information-Disclosure-Assessment.pdf" target="_blank" class="report-btn">
-    🔍 View Full Report
-  </a>
-  <a href="reports/Information-Disclosure-Assessment.pdf" download class="download-btn">
-    ⬇ Download Report
-  </a>
-</div>
-    </div>
-
-    <div class="card">
-        <h3>Network Vulnerability Assessment</h3>
-        <p><strong>Scope:</strong> Scanned internal network for exposed services.</p>
-        <p><strong>Findings:</strong></p>
-        <ul>
-            <li>Open ports with outdated services</li>
-            <li>Weak SSH configuration</li>
-            <li>Unpatched vulnerabilities</li>
-        </ul>
-        <p><strong>Tools Used:</strong> Nmap, Wireshark</p>
-        <p><strong>Outcome:</strong> Improved network security posture with hardening recommendations.</p>
-    </div>
-
-   <div class="card">
-  <h2>🔐 Authentication Security Assessment & Brute Force Analysis</h2>
-  
-  <p class="subtitle">
-    A comprehensive security assessment was conducted on the authentication mechanisms of the target application. 
-    The objective was to evaluate the robustness of brute force protection, account enumeration defenses, and login request handling.
-  </p>
-
-  
-  <div class="finding">
-    <h3>Authentication Vulnerabilities (Brute Force & Enumeration)</h3>
-    <p><strong>Scope:</strong> 
-      The assessment focused on analyzing the login functionality, including brute force protection mechanisms, username enumeration behavior, and handling of multiple credential attempts within a single request.
-    </p>
-    <p><strong>Finding:</strong> 
-      The application exhibits multiple weaknesses in its authentication controls. 
-      These include inadequate brute force protection allowing repeated login attempts, inconsistent handling of IP-based blocking mechanisms, and the ability to bypass rate-limiting by manipulating request structures.
-    </p>
-    <p>
-      Additionally, the system leaks information during login attempts that enables username enumeration, such as different error messages or response behaviors for valid and invalid usernames. 
-      This significantly aids attackers in identifying valid accounts and targeting them for further attacks.
-    </p>
-    <p>
-      Furthermore, the application fails to properly restrict multiple credential submissions within a single request, allowing attackers to bypass brute force protections and attempt multiple passwords simultaneously.
-    </p>
-    <p><strong>Impact:</strong> 
-      These vulnerabilities enable attackers to perform efficient brute force attacks, enumerate valid users, and potentially gain unauthorized access to user accounts. 
-      This can lead to full account compromise and further exploitation of the application.
-    </p>
-    <p><strong>Risk Level:</strong> <span class="critical">Critical</span></p>
-      <div class="report-section">
-  <h3>📄 Authentication Security Assessment & Brute Force Analysis Report</h3>
-  <p class="report-desc">
-    This report contains detailed findings, exploitation steps, and supporting evidence related to authentication vulnerabilities, including brute force weaknesses, username enumeration, and protection bypass techniques.
-  </p>
-  <a href="reports/Authentication-Security-Assessment.pdf" target="_blank" class="report-btn">
-    🔍 View Full Report
-  </a>
-  <a href="reports/Authentication-Security-Assessment.pdf" download class="download-btn">
-    ⬇ Download Report
-  </a>
-</div>
-  </div>
-
-    </div>
-
-</section>
-
-<section id="certifications" class="fade-up">
-    <h2>Certificates</h2>
-
-    <div class="card">
-        <h3>CompTIA Security+</h3>
-        <p>Validates foundational cybersecurity skills including risk management, network security, and threat analysis.</p>
-    </div>
-
-    <div class="card">
-        <h3>Cisco Certified Network Associate (CCNA)</h3>
-        <p>Demonstrates knowledge of networking fundamentals, IP connectivity, and network security basics.</p>
-    </div>
-
-
-</section>
     
     <section id="contact" class="fade-up">
       <h2>Contacts</h2>
