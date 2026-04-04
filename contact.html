@@ -1,184 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jana Muhamed | Cybersecurity Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jana Muhamed | System Contact</title>
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --card-bg: #0d0d0d;
+            --neon-cyan: #00f2ff;
+            --neon-blue: #1f6feb;
+            --text-gray: #aab2bb;
+            --terminal-green: #00ff41;
+            --critical-red: #ff3131;
+        }
 
-<style>
-:root {
-    --bg-dark: #050505;
-    --card-bg: #0d0d0d;
-    --neon-cyan: #00f2ff;
-    --neon-blue: #1f6feb;
-    --text-gray: #aab2bb;
-    --terminal-green: #00ff41;
-}
+        body { 
+            margin: 0; 
+            font-family: 'JetBrains Mono', 'Fira Code', monospace; 
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #e6edf3; 
+            overflow-x: hidden;
+        }
 
-body { 
-    margin: 0; 
-    font-family: 'JetBrains Mono', 'Fira Code', monospace; 
-    background-color: var(--bg-dark);
-    /* Subtle Cyber Grid Background */
-    background-image: 
-        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
-    color: #e6edf3; 
-    scroll-behavior: smooth; 
-}
+        nav {
+            position: fixed; right: 0; top: 0; height: 100vh; width: 220px;
+            display: flex; flex-direction: column; padding: 30px 20px;
+            background: rgba(5, 5, 5, 0.95); border-left: 1px solid var(--neon-cyan);
+            backdrop-filter: blur(15px); z-index: 1000;
+        }
 
-nav {
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 20px;
-    background: rgba(5, 5, 5, 0.9);
-    border-left: 1px solid var(--neon-cyan);
-    backdrop-filter: blur(15px);
-    z-index: 1000;
-    box-shadow: -5px 0 20px rgba(0, 242, 255, 0.1);
-}
+        nav a { color: var(--text-gray); margin: 15px 0; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); transform: translateX(-5px); }
 
-nav a {
-    color: var(--text-gray);
-    margin: 15px 0;
-    text-decoration: none;
-    display: block;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
+        .container { max-width: 900px; margin-right: 240px; padding: 80px 40px; }
 
-nav a:hover {
-    color: var(--neon-cyan);
-    text-shadow: 0 0 8px var(--neon-cyan);
-    transform: translateX(-5px);
-}
+        .header-box { border-bottom: 1px solid #222; padding-bottom: 20px; margin-bottom: 50px; }
+        h2 { color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 4px; font-size: 1.8rem; margin: 0; }
+        .status-line { font-size: 0.8rem; color: var(--terminal-green); margin-top: 10px; }
 
-.container {
-    max-width: 900px;
-    margin-right: 240px; 
-    padding: 120px 40px;
-}
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
+        /* Professional Info Card */
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            position: relative;
+            border-top: 3px solid var(--neon-cyan);
+        }
 
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .info-card h3 { font-size: 0.9rem; color: var(--neon-cyan); margin-top: 0; text-transform: uppercase; }
+        .info-card p { font-size: 0.85rem; color: var(--text-gray); }
 
-.contacts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+        /* Social Link Styling */
+        .platform-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: #111;
+            border: 1px solid #222;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 10px;
+            transition: 0.3s;
+            font-size: 0.85rem;
+        }
 
-/* Cyber Button Styling */
-.btn {
-    background: transparent;
-    color: var(--neon-cyan);
-    padding: 12px 24px;
-    border: 1px solid var(--neon-cyan);
-    border-radius: 4px;
-    display: inline-flex;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .platform-link:hover {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 242, 255, 0.05);
+            transform: scale(1.02);
+        }
 
-.btn:hover {
-    background: rgba(0, 242, 255, 0.1);
-    box-shadow: 0 0 15px var(--neon-cyan);
-    transform: translateY(-2px);
-}
+        .platform-tag { font-size: 0.7rem; color: #555; text-transform: uppercase; }
 
-h1 { 
-    font-size: 48px; 
-    text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
-}
+        /* Email Copy Box */
+        .email-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px dashed #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .email-box:hover { border-color: var(--terminal-green); }
 
-h2 {
-    color: var(--neon-cyan);
-    border-left: 4px solid var(--neon-cyan);
-    padding-left: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-}
+        footer { text-align: center; padding: 60px; color: #333; font-size: 0.75rem; font-family: monospace; }
 
-p {
-    color: var(--text-gray);
-    line-height: 1.6;
-}
-
-footer {
-    text-align: center;
-    padding: 60px 30px;
-    color: #444;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-}
-
-/* Glowing accent for the "active" feel */
-.contacts p::before {
-    content: "> ";
-    color: var(--terminal-green);
-}
-</style>
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .container { margin-right: 0; padding: 40px 20px; }
+            nav { width: 100%; height: auto; position: relative; border-left: none; border-bottom: 1px solid var(--neon-cyan); }
+        }
+    </style>
 </head>
-
 <body>
 
 <nav>
-    <a href="index.html">// HOME</a>
-    <a href="projects.html">// PROJECTS</a>
-    <a href="certificates.html">// CERTIFICATES</a>
-    <a href="contact.html">// CONTACT</a>
+    <a href="index.html">// 01 HOME</a>
+    <a href="projects.html">// 02 PROJECTS</a>
+    <a href="certificates.html">// 03 CERTIFICATES</a>
+    <a href="contact.html" style="color: var(--neon-cyan);">// 04 CONTACT</a>
 </nav>
 
 <div class="container">
-    <section id="contact" class="fade-up">
-        <h2>System.Contact()</h2>
-        <div class="contacts">
-            <p>Explore my professional profiles and work experience below.</p>
-            <div style="width: 100%; height: 20px;"></div> <a class="btn" href="mailto:janaamuhamed008@gmail.com">Email Me</a>
-            <a class="btn" href="https://www.linkedin.com/in/janamuhamed" target="_blank">LinkedIn</a>
-            <a class="btn" href="https://www.upwork.com/freelancers/~01abae447b7448b0d9?mp_source=share" target="_blank">Upwork</a>
-            <a class="btn" href="https://www.freelancer.com/u/janamuhamed1?sb=t" target="_blank">Freelancer</a>
+    <div class="header-box">
+        <h2>Establish.Communication()</h2>
+        <p class="status-line">[ STATUS: SECURE_CHANNEL_READY ]</p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="info-card">
+            <h3>Direct Engagement</h3>
+            <p>I am currently available for freelance penetration testing, vulnerability assessments, and infrastructure security audits.</p>
+            <p>For urgent security inquiries or professional proposals, please use the direct email or encrypted professional channels provided.</p>
+            
+            <div class="email-box" onclick="copyEmail()">
+                <span id="email-text">janaamuhamed008@gmail.com</span>
+                <span style="font-size: 10px; color: var(--terminal-green);">[ COPY ]</span>
+            </div>
+            <p style="font-size: 10px; color: #444; margin-top: 10px;">Response Time: < 24 Hours</p>
         </div>
-    </section>
+
+        <div>
+            <a href="https://www.linkedin.com/in/janamuhamed" target="_blank" class="platform-link">
+                <span>LinkedIn</span>
+                <span class="platform-tag">Professional Network</span>
+            </a>
+            
+            <a href="https://www.upwork.com/freelancers/~01abae447b7448b0d9" target="_blank" class="platform-link">
+                <span>Upwork</span>
+                <span class="platform-tag">Contracting / ESCROW</span>
+            </a>
+            
+            <a href="https://www.freelancer.com/u/janamuhamed1" target="_blank" class="platform-link">
+                <span>Freelancer</span>
+                <span class="platform-tag">Freelance Projects</span>
+            </a>
+
+            <div style="margin-top: 30px; border-top: 1px solid #1a1a1a; padding-top: 20px;">
+                <p style="font-size: 0.75rem; color: #444;">
+                    MD5_CONTACT_HASH: d41d8cd98f00b204e9800998ecf8427e<br>
+                    LOCAL_TIME: <span id="time"></span> (GMT+2)
+                </p>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        [ AUTHENTICATED ] &copy; 2026 JANA MUHAMED
+        [ AUTHENTICATED_SESSION ] &copy; 2026 JANA MUHAMED // PENETRATION TESTER
     </footer>
 </div>
 
 <script>
-const elements = document.querySelectorAll('.fade-up');
+    // Copy Email Function
+    function copyEmail() {
+        const email = document.getElementById('email-text').innerText;
+        navigator.clipboard.writeText(email);
+        alert('Email address copied to clipboard.');
+    }
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.1 });
-
-elements.forEach(el => observer.observe(el));
+    // Dynamic Time
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('time').innerText = now.toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
 </script>
 
 </body>
