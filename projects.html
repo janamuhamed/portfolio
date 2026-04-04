@@ -3,10 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jana Muhamed | Portfolio</title>
+<title>Jana Muhamed | Portfolio - Projects</title>
 
 <style>
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0b1220; color: #e6edf3; scroll-behavior: smooth; }
+:root {
+    --bg-dark: #050505;
+    --card-bg: #0d0d0d;
+    --neon-cyan: #00f2ff;
+    --neon-blue: #1f6feb;
+    --critical-red: #ff3e3e;
+    --terminal-green: #00ff41;
+    --text-gray: #aab2bb;
+    --border-color: #1f2a44;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'JetBrains Mono', 'Fira Code', monospace; 
+    background-color: var(--bg-dark);
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #e6edf3; 
+    scroll-behavior: smooth; 
+}
 
 nav {
     position: fixed;
@@ -17,42 +38,38 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
-    background: rgba(10,20,40,0.8);
-    backdrop-filter: blur(12px);
+    background: rgba(5, 5, 5, 0.95);
+    border-left: 1px solid var(--neon-cyan);
+    backdrop-filter: blur(15px);
     z-index: 1000;
 }
 
 nav a {
-    color: #e6edf3;
+    color: var(--text-gray);
     margin: 15px 0;
     text-decoration: none;
     display: block;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #58a6ff;
-}
-
-nav a {
-    color: #e6edf3;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #58a6ff;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    transform: translateX(-8px);
 }
 
 .container {
     max-width: 900px;
-      margin-right: 240px; /* space for sidebar */
-    padding: 120px 20px;
+    margin-right: 240px; 
+    padding: 80px 40px;
 }
 
 .fade-up {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade-up.show {
@@ -60,53 +77,115 @@ nav a:hover {
     transform: translateY(0);
 }
 
+h2 {
+    color: var(--neon-cyan);
+    border-left: 3px solid var(--neon-cyan);
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
 .card {
-    background: #111a2e;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border: 1px solid #1f2a44;
+    background: var(--card-bg);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: #1f6feb;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
 }
 
-.btn {
-    background: linear-gradient(135deg, #1f6feb, #388bfd);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    display: inline-flex;
-    text-decoration: none;
-    font-weight: 600;
+.card h2, .card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    border: none;
+    padding: 0;
 }
 
-.skills span {
-    background: #1a2742;
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin: 5px;
+.subtitle {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.critical {
+    color: var(--critical-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(255, 62, 62, 0.4);
+}
+
+.finding p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.finding strong {
+    color: var(--neon-cyan);
+}
+
+/* Report Section Buttons */
+.report-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #333;
+}
+
+.report-btn, .download-btn {
     display: inline-block;
+    padding: 10px 18px;
+    margin: 10px 10px 0 0;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
-.skills span:hover {
-    background: #1f6feb;
+.report-btn {
+    background: var(--neon-cyan);
+    color: #000;
 }
 
-h1 { font-size: 44px; }
+.download-btn {
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+}
 
-h2 {
-    border-left: 4px solid #1f6feb;
-    padding-left: 10px;
+.report-btn:hover, .download-btn:hover {
+    box-shadow: 0 0 15px var(--neon-cyan);
+    transform: translateY(-2px);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: ">> ";
+    color: var(--terminal-green);
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    color: #8b949e;
+    padding: 80px 0 40px;
+    color: #444;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
 }
 </style>
 </head>
@@ -114,137 +193,83 @@ footer {
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="certificates.html">Certificates</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">// 01_HOME</a>
+    <a href="projects.html">// 02_PROJECTS</a>
+    <a href="certificates.html">// 03_CERTS</a>
+    <a href="contact.html">// 04_CONTACT</a>
 </nav>
 
-
+<div class="container">
 
     <section id="projects" class="fade-up">
-    <h2>Projects</h2>
+        <h2>_Mission_Reports</h2>
 
-    <div class="card">
-        
-         <div class="card">
-        <h2>🔐 Information Disclosure Vulnerability Assessment Project</h2>
-  
-  <p class="subtitle">
-    A comprehensive security assessment was conducted to identify information disclosure vulnerabilities within the web application. 
-    The testing revealed multiple weaknesses that collectively expose sensitive data and internal system details, significantly increasing the risk of further exploitation.
-  </p>
-  <div class="finding">
-    <h3>Information Disclosure Vulnerabilities (Multiple Attack Vectors)</h3>
-    <p><strong>Scope:</strong> 
-      The assessment focused on identifying improper handling of sensitive information across the application, including error handling mechanisms, exposed development resources, backup files, authentication processes, and version control artifacts.
-    </p> 
-    <p><strong>Finding:</strong> 
-      The application suffers from multiple information disclosure vulnerabilities across different components. 
-      These include verbose error messages revealing internal system details, exposed debug functionality, accessible backup files containing source code, leakage of authentication-related information enabling access control bypass, and publicly accessible version control data.
-    </p>
-    <p>
-      Collectively, these issues allow an attacker to gather critical intelligence about the application's internal structure, technologies, and security mechanisms. 
-      This significantly lowers the attack complexity and increases the likelihood of successful exploitation, including unauthorized access and potential full system compromise.
-    </p>
-    <p><strong>Risk Level:</strong> <span class="critical">Critical</span></p>
-       <p><strong>Tools Used:</strong> Burp Suite</p>
-    </div>
+        <div class="card">
+            <h3>🔐 Information Disclosure Assessment</h3>
+            <p class="subtitle">Comprehensive security audit identifying improper sensitive data handling.</p>
+            
+            <div class="finding">
+                <p><strong>Scope:</strong> Error handling, debug resources, backup files, and version control artifacts.</p>
+                <p><strong>Analysis:</strong> Testing revealed verbose error messages and exposed development resources. These vulnerabilities allow intelligence gathering on internal system architecture, lowering attack complexity.</p>
+                <p><strong>Risk Level:</strong> <span class="critical">CRITICAL_VULN</span></p>
+                <p><strong>Tools:</strong> Burp Suite, Dirsearch</p>
+            </div>
+
             <div class="report-section">
-  <h3>📄 Information Disclosure Vulnerability Assessment & Security Analysis Report</h3>
-  <p class="report-desc">
-    This report contains detailed findings, exploitation steps, and supporting evidence related to identified information disclosure vulnerabilities.
-  </p>
-  <a href="reports/Information-Disclosure-Assessment.pdf" target="_blank" class="report-btn">
-    🔍 View Full Report
-  </a>
-  <a href="reports/Information-Disclosure-Assessment.pdf" download class="download-btn">
-    ⬇ Download Report
-  </a>
-</div>
-    </div>
+                <a href="reports/Information-Disclosure-Assessment.pdf" target="_blank" class="report-btn">🔍 View Full Report</a>
+                <a href="reports/Information-Disclosure-Assessment.pdf" download class="download-btn">⬇ Download</a>
+            </div>
+        </div>
 
-    <div class="card">
-        <h3>Network Vulnerability Assessment</h3>
-        <p><strong>Scope:</strong> Scanned internal network for exposed services.</p>
-        <p><strong>Findings:</strong></p>
-        <ul>
-            <li>Open ports with outdated services</li>
-            <li>Weak SSH configuration</li>
-            <li>Unpatched vulnerabilities</li>
-        </ul>
-        <p><strong>Tools Used:</strong> Nmap, Wireshark</p>
-        <p><strong>Outcome:</strong> Improved network security posture with hardening recommendations.</p>
-    </div>
+        <div class="card">
+            <h3>🌐 Network Vulnerability Scan</h3>
+            <p class="subtitle">Internal asset scanning and service hardening project.</p>
+            
+            <div class="finding">
+                <p><strong>Scope:</strong> Scanned internal network for exposed services.</p>
+                <ul>
+                    <li>Open ports with outdated services</li>
+                    <li>Weak SSH configuration</li>
+                    <li>Unpatched kernel vulnerabilities</li>
+                </ul>
+                <p><strong>Outcome:</strong> Implemented network hardening recommendations and service isolation.</p>
+                <p><strong>Tools:</strong> Nmap, Wireshark, Metasploit</p>
+            </div>
+        </div>
 
-   <div class="card">
-  <h2>🔐 Authentication Security Assessment & Brute Force Analysis</h2>
-  
-  <p class="subtitle">
-    A comprehensive security assessment was conducted on the authentication mechanisms of the target application. 
-    The objective was to evaluate the robustness of brute force protection, account enumeration defenses, and login request handling.
-  </p>
+        <div class="card">
+            <h3>🔑 Auth Security & Brute Force Analysis</h3>
+            <p class="subtitle">Evaluation of login robustness and rate-limiting defenses.</p>
+            
+            <div class="finding">
+                <p><strong>Analysis:</strong> Identified inadequate brute force protection and account enumeration via response timing and error message discrepancies.</p>
+                <p><strong>Impact:</strong> Attackers could bypass rate-limiting and gain unauthorized access to user accounts through password spraying.</p>
+                <p><strong>Risk Level:</strong> <span class="critical">CRITICAL_VULN</span></p>
+            </div>
 
-  
-  <div class="finding">
-    <h3>Authentication Vulnerabilities (Brute Force & Enumeration)</h3>
-    <p><strong>Scope:</strong> 
-      The assessment focused on analyzing the login functionality, including brute force protection mechanisms, username enumeration behavior, and handling of multiple credential attempts within a single request.
-    </p>
-    <p><strong>Finding:</strong> 
-      The application exhibits multiple weaknesses in its authentication controls. 
-      These include inadequate brute force protection allowing repeated login attempts, inconsistent handling of IP-based blocking mechanisms, and the ability to bypass rate-limiting by manipulating request structures.
-    </p>
-    <p>
-      Additionally, the system leaks information during login attempts that enables username enumeration, such as different error messages or response behaviors for valid and invalid usernames. 
-      This significantly aids attackers in identifying valid accounts and targeting them for further attacks.
-    </p>
-    <p>
-      Furthermore, the application fails to properly restrict multiple credential submissions within a single request, allowing attackers to bypass brute force protections and attempt multiple passwords simultaneously.
-    </p>
-    <p><strong>Impact:</strong> 
-      These vulnerabilities enable attackers to perform efficient brute force attacks, enumerate valid users, and potentially gain unauthorized access to user accounts. 
-      This can lead to full account compromise and further exploitation of the application.
-    </p>
-    <p><strong>Risk Level:</strong> <span class="critical">Critical</span></p>
-      <div class="report-section">
-  <h3>📄 Authentication Security Assessment & Brute Force Analysis Report</h3>
-  <p class="report-desc">
-    This report contains detailed findings, exploitation steps, and supporting evidence related to authentication vulnerabilities, including brute force weaknesses, username enumeration, and protection bypass techniques.
-  </p>
-  <a href="reports/Authentication-Security-Assessment.pdf" target="_blank" class="report-btn">
-    🔍 View Full Report
-  </a>
-  <a href="reports/Authentication-Security-Assessment.pdf" download class="download-btn">
-    ⬇ Download Report
-  </a>
-</div>
-  </div>
+            <div class="report-section">
+                <a href="reports/Authentication-Security-Assessment.pdf" target="_blank" class="report-btn">🔍 View Full Report</a>
+                <a href="reports/Authentication-Security-Assessment.pdf" download class="download-btn">⬇ Download</a>
+            </div>
+        </div>
 
-    </div>
+    </section>
 
-</section>
-
-
-
-
-
-        <footer>
-        © 2026 Jana Muhamed
+    <footer>
+        [ END_OF_SESSION ] &copy; 2026 Jana Muhamed
     </footer>
 
 </div>
 
 <script>
 const elements = document.querySelectorAll('.fade-up');
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
 elements.forEach(el => observer.observe(el));
 </script>
