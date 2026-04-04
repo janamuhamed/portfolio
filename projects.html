@@ -217,8 +217,8 @@ footer {
             </div>
 
             <div class="report-section">
-                <a href="reports/Information-Disclosure-Assessment.pdf" target="_blank" class="report-btn">🔍 View Full Report</a>
-                <a href="reports/Information-Disclosure-Assessment.pdf" download class="download-btn">⬇ Download</a>
+                <a href="reports/Information Disclosure Vulnerability Assessment & Security Analysis Report.pdf" target="_blank" class="report-btn">🔍 View Full Report</a>
+                <a href="reports/Information Disclosure Vulnerability Assessment & Security Analysis Report.pdf" download class="download-btn">⬇ Download</a>
             </div>
         </div>
 
@@ -229,33 +229,29 @@ footer {
     </div>
     
     <p class="subtitle">An exhaustive security evaluation of the application’s multi-tenant authorization logic and vertical/horizontal privilege boundaries.</p>
-    
     <div class="finding">
         <p><strong>Scope & Methodology:</strong><br>
         The audit encompassed a full-spectrum analysis of **Broken Object Level Authorization (BOLA/IDOR)**, **Broken Function Level Authorization (BFLA)**, and **Insecure Direct Object References**. Methodology included manual manipulation of JWT (JSON Web Tokens) claims, probing of hidden API endpoints (`/api/v1/admin/*`), and testing for "Mass Assignment" vulnerabilities within account-update functions.
         </p>
-        
         <p><strong>Detailed Findings:</strong><br>
         Analysis identified a systemic failure in the backend's "Least Privilege" enforcement. Specifically, a **Vertical Privilege Escalation** path was discovered where a standard user could manipulate a hidden `role_id` parameter to gain super-user permissions. Furthermore, **Horizontal IDOR** was confirmed across the billing module, allowing unauthorized cross-tenant data retrieval by iterating through sequential resource UUIDs.
-        </p>
-        
+        </p>  
         <p><strong>Strategic Impact:</strong><br>
         These vulnerabilities posed a catastrophic risk to data sovereignty. An external actor could have exfiltrated the entire user database or executed unauthorized administrative commands, leading to full infrastructure takeover and regulatory non-compliance.
-        </p>
-        
+        </p>  
         <p><strong>Risk Rating:</strong> <span class="critical">CRITICAL // CVSS 9.8</span></p>
-        <p><strong>Arsenal:</strong> Burp Suite Professional, Postman, JWT_Tool, Custom Python Fuzzers</p>
+        <p><strong>Tool:</strong> Burp Suite Professional</p>
     </div>
 
     <div class="report-section">
         <p class="report-desc" style="font-style: italic; color: #888; font-size: 0.8rem; margin-bottom: 15px;">
             This technical dossier provides a step-by-step reproduction of the exploit chain and a detailed remediation roadmap.
         </p>
-        <a href="reports/Access-Control-Security-Audit.pdf" target="_blank" class="report-btn">
-            🔍 Open Security Dossier
+        <a href="reports/Web Application Penetration Test_ Broken Access Control (BAC) Impact Report.pdf" target="_blank" class="report-btn">
+            🔍 View Full Report
         </a>
-        <a href="reports/Access-Control-Security-Audit.pdf" download="JanaMuhamed_Access_Control_Audit_2026.pdf" class="download-btn">
-            ⬇ Download Archive
+        <a href="reports/Web Application Penetration Test_ Broken Access Control (BAC) Impact Report.pdf" download="Web Application Penetration Test_ Broken Access Control (BAC) Impact Report.pdf" class="download-btn">
+            ⬇ Download 
         </a>
         <div style="margin-top: 15px; border-top: 1px solid #1a1a1a; padding-top: 10px;">
             <p style="font-size: 9px; color: #444; font-family: monospace; margin: 0;">
