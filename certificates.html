@@ -2,12 +2,37 @@
 <html lang="en">
 <head>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jana Muhamed | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jana Muhamed | Certificates</title>
 
 <style>
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0b1220; color: #e6edf3; scroll-behavior: smooth; }
+:root {
+    --bg-dark: #050505;
+    --card-bg: #0d0d0d;
+    --neon-cyan: #00f2ff;
+    --text-gray: #aab2bb;
+    --border-color: #1f2a44;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'JetBrains Mono', 'Fira Code', monospace; 
+    background-color: var(--bg-dark);
+    color: #e6edf3; 
+    scroll-behavior: smooth; 
+    overflow-x: hidden;
+}
+
+/* Background Particles Container */
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
 nav {
     position: fixed;
@@ -18,42 +43,38 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
-    background: rgba(10,20,40,0.8);
-    backdrop-filter: blur(12px);
+    background: rgba(5, 5, 5, 0.95);
+    border-left: 1px solid var(--neon-cyan);
+    backdrop-filter: blur(15px);
     z-index: 1000;
 }
 
 nav a {
-    color: #e6edf3;
+    color: var(--text-gray);
     margin: 15px 0;
     text-decoration: none;
     display: block;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #58a6ff;
-}
-
-nav a {
-    color: #e6edf3;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #58a6ff;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    transform: translateX(-8px);
 }
 
 .container {
     max-width: 900px;
-    margin-right: 240px; /* space for sidebar */
-    padding: 120px 20px;
+    margin-right: 240px; 
+    padding: 80px 40px;
 }
 
 .fade-up {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade-up.show {
@@ -61,148 +82,150 @@ nav a:hover {
     transform: translateY(0);
 }
 
+h2 {
+    color: var(--neon-cyan);
+    border-left: 3px solid var(--neon-cyan);
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+/* Cyber Certificate Card */
 .card {
-    background: #111a2e;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border: 1px solid #1f2a44;
+    background: rgba(13, 13, 13, 0.8);
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: all 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: #1f6feb;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    transform: translateY(-5px);
 }
 
-.btn {
-    background: linear-gradient(135deg, #1f6feb, #388bfd);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    display: inline-flex;
-    text-decoration: none;
-    font-weight: 600;
+.card h3 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
-.skills span {
-    background: #1a2742;
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin: 5px;
-    display: inline-block;
+.card h3::before {
+    content: "ID_";
+    color: var(--neon-cyan);
+    font-size: 0.8rem;
 }
 
-.skills span:hover {
-    background: #1f6feb;
-}
-
-h1 { font-size: 44px; }
-
-h2 {
-    border-left: 4px solid #1f6feb;
-    padding-left: 10px;
+.card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 0.9rem;
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    color: #8b949e;
-}
-
-#tsparticles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    padding: 60px 0;
+    color: #444;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
 }
 </style>
 </head>
-<div id="tsparticles"></div>
+
 <body>
+<div id="tsparticles"></div>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    
-    <a href="certificates.html">Certificates</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">// 01_HOME</a>
+    <a href="projects.html">// 02_PROJECTS</a>
+    <a href="certificates.html">// 03_CERTS</a>
+    <a href="contact.html">// 04_CONTACT</a>
 </nav>
 
+<div class="container">
+    <section id="certifications" class="fade-up">
+        <h2>_Verified_Credentials</h2>
 
+        <div class="card">
+            <h3>CompTIA Security+</h3>
+            <p>Validates foundational cybersecurity skills including risk management, network security, and threat analysis.</p>
+        </div>
 
-<section id="certifications" class="fade-up">
-    <h2>Certificates</h2>
+        <div class="card">
+            <h3>Cisco Certified Network Associate (CCNA)</h3>
+            <p>Demonstrates knowledge of networking fundamentals, IP connectivity, and network security basics.</p>
+        </div>
+    </section>
 
-    <div class="card">
-        <h3>CompTIA Security+</h3>
-        <p>Validates foundational cybersecurity skills including risk management, network security, and threat analysis.</p>
-    </div>
-
-    <div class="card">
-        <h3>Cisco Certified Network Associate (CCNA)</h3>
-        <p>Demonstrates knowledge of networking fundamentals, IP connectivity, and network security basics.</p>
-    </div>
-
-
-</section>
-
-
-
-        <footer>
-        © 2026 Jana Muhamed
+    <footer>
+        [ AUTH_ENCRYPTED ] &copy; 2026 Jana Muhamed
     </footer>
-
 </div>
 
 <script>
-/* ===== YOUR FADE-UP ANIMATION (UNCHANGED) ===== */
+/* Fade-in Logic */
 const elements = document.querySelectorAll('.fade-up');
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
 elements.forEach(el => observer.observe(el));
 
-
-</script>
-<script>
+/* Particles Configuration */
 tsParticles.load("tsparticles", {
     background: {
-        color: "#0b1220"
+        color: "#050505"
     },
     particles: {
         number: {
-            value: 60
+            value: 80,
+            density: { enable: true, area: 800 }
         },
         color: {
-            value: "#58a6ff"
+            value: "#00f2ff"
         },
         shape: {
             type: "circle"
         },
         opacity: {
-            value: 0.5
+            value: 0.3
         },
         size: {
-            value: { min: 1, max: 3 }
-        },
-        move: {
-            enable: true,
-            speed: 1.2
+            value: { min: 1, max: 2 }
         },
         links: {
             enable: true,
-            distance: 130,
-            color: "#58a6ff",
-            opacity: 0.3
+            distance: 150,
+            color: "#00f2ff",
+            opacity: 0.2,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 0.8,
+            direction: "none",
+            random: false,
+            straight: false,
+            outModes: { default: "out" }
+        }
+    },
+    interactivity: {
+        events: {
+            onHover: { enable: true, mode: "grab" },
+            onClick: { enable: true, mode: "push" }
+        },
+        modes: {
+            grab: { distance: 200, links: { opacity: 0.5 } }
         }
     }
 });
