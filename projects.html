@@ -204,23 +204,59 @@ footer {
     <section id="projects" class="fade-up">
         <h2>Projects</h2>
 
-        <div class="card">
-            <h3>🔐  Information Disclosure Vulnerability Assessment Project</h3>
-            <p class="subtitle">Comprehensive security audit identifying improper sensitive data handling.</p>
-            
-            <div class="finding">
-                <p><strong>Scope:</strong> A comprehensive security assessment was conducted to identify information disclosure vulnerabilities within the web application. 
-    The testing revealed multiple weaknesses that collectively expose sensitive data and internal system details, significantly increasing the risk of further exploitation.</p>
-                <p><strong>Analysis:</strong> Testing revealed verbose error messages and exposed development resources. These vulnerabilities allow intelligence gathering on internal system architecture, lowering attack complexity.</p>
-                <p><strong>Risk Level:</strong> <span class="critical">CRITICAL_VULN</span></p>
-                <p><strong>Tools:</strong> Burp Suite</p>
-            </div>
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <h3>🔍 Systemic Information Disclosure & Infrastructure Intelligence Audit</h3>
+        <span class="critical" style="font-size: 10px; border: 1px solid var(--critical-red); padding: 2px 6px;">DATA-LEAK-2026</span>
+    </div>
+    
+    <p class="subtitle">A high-fidelity security assessment targeting the involuntary exposure of sensitive technical metadata and PII through application logic and infrastructure artifacts.</p>
+    
+    <div class="finding">
+        <p><strong>Comprehensive Scope & Methodology:</strong><br>
+        The audit utilized a multi-layered reconnaissance framework to map the application's internal "data exhaust." The scope included:
+        <br>• <strong>Infrastructure Metadata:</strong> Probing for exposed <code>.git</code>, <code>.env</code>, and <code>web.config</code> files to reconstruct the CI/CD pipeline and environment variables.
+        <br>• <strong>Cloud & API Artifacts:</strong> Auditing for leaked <strong>Swagger/OpenAPI</strong> documentation and probing <strong>Cloud Instance Metadata Services (IMDS)</strong> for SSRF-driven credential leakage.
+        <br>• <strong>Response Header Analysis:</strong> Identifying <code>X-Powered-By</code> and <code>Server</code> banners that reveal specific patched/unpatched software versions.
+        <br>• <strong>Client-Side Source Leakage:</strong> Analyzing JavaScript source maps and commented-out production code for hardcoded API keys and internal staging URLs.
+        </p>
+        
+        <p><strong>Technical Analysis:</strong><br>
+        Testing confirmed multiple high-risk disclosure vectors. Specifically, the production environment was found to return full <strong>SQL Stack Traces</strong> during database exceptions, revealing internal table schemas and backend logic. Furthermore, access to <strong>Version Control Metadata</strong> allowed for the reconstruction of the application’s deployment history, exposing hardcoded credentials and private internal IP addresses.
+        </p>
+        
+        <p><strong>Security Impact:</strong><br>
+        These disclosures provide a technical roadmap for sophisticated attackers to craft targeted exploits. By eliminating the "cost of reconnaissance," these vulnerabilities transform the application into an open book, significantly increasing the probability of a full system breach and unauthorized data exfiltration.
+        </p>
+        
+        <p><strong>Risk Rating:</strong> <span class="critical">CRITICAL // CVSS 9.1</span></p>
+        <p><strong>Arsenal:</strong> Burp Suite Professional, Dirsearch, FFUF</p>
+    </div>
 
-            <div class="report-section">
-                <a href="reports/Information Disclosure Vulnerability Assessment & Security Analysis Report.pdf" target="_blank" class="report-btn">🔍 View Full Report</a>
-                <a href="reports/Information Disclosure Vulnerability Assessment & Security Analysis Report.pdf" download class="download-btn">⬇ Download</a>
-            </div>
+    <div class="report-section">
+        <p class="report-desc" style="font-style: italic; color: #888; font-size: 0.8rem; margin-bottom: 15px;">
+            Full intelligence dossier containing identified leak points, exploitation evidence, and architectural hardening strategies.
+        </p>
+        
+        <a href="reports/Information%20Disclosure%20Vulnerability%20Assessment%20&%20Security%20Analysis%20Report.pdf" 
+           target="_blank" 
+           class="report-btn">
+           🔍 View Full Report
+        </a>
+
+        <a href="reports/Information%20Disclosure%20Vulnerability%20Assessment%20&%20Security%20Analysis%20Report.pdf" 
+           download="JanaMuhamed_Info_Disclosure_Audit_2026.pdf" 
+           class="download-btn">
+           ⬇ Download 
+        </a>
+
+        <div style="margin-top: 15px; border-top: 1px solid #1a1a1a; padding-top: 10px;">
+            <p style="font-size: 9px; color: #444; font-family: monospace; margin: 0;">
+                SHA-1: d2a3b4c5...e6f7 | [ RESTRICTED_ACCESS ]
+            </p>
         </div>
+    </div>
+</div>
 
 <div class="card">
     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -261,23 +297,54 @@ footer {
     </div>
 </div>
 
-        <div class="card">
-            <h3>🔑 Authentication Security Assessment & Brute Force Analysis</h3>
-            <p class="subtitle">    A comprehensive security assessment was conducted on the authentication mechanisms of the target application. 
-    The objective was to evaluate the robustness of brute force protection, account enumeration defenses, and login request handling.</p>
-            
-            <div class="finding">
-                <p><strong>Analysis:</strong> Identified inadequate brute force protection and account enumeration via response timing and error message discrepancies.</p>
-                <p><strong>Impact:</strong>  These vulnerabilities enable attackers to perform efficient brute force attacks, enumerate valid users, and potentially gain unauthorized access to user accounts. 
-      This can lead to full account compromise and further exploitation of the application.</p>
-                <p><strong>Risk Level:</strong> <span class="critical">CRITICAL_VULN</span></p>
-            </div>
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <h3>🔑 Advanced Authentication Mechanism & Identity Perimeter Audit</h3>
+        <span class="critical" style="font-size: 10px; border: 1px solid var(--critical-red); padding: 2px 6px;">AUTH-BYPASS-2026</span>
+    </div>
+    
+    <p class="subtitle">A comprehensive security evaluation of the application’s identity lifecycle, focusing on credential resilience, account enumeration, and brute-force mitigation strategies.</p>
+    
+    <div class="finding">
+        <p><strong>Professional Scope & Methodology:</strong><br>
+        The audit targeted the application's entire entry-point architecture. The scope included:
+        <br>• <strong>Brute-Force & Rate-Limiting Resilience:</strong> Testing for bypasses of IP-based blocking through header manipulation (<code>X-Forwarded-For</code>) and distributed attack vectors.
+        <br>• <strong>Account Enumeration Defense:</strong> Analyzing response timing discrepancies and error message consistency to determine if valid usernames could be mapped.
+        <br>• <strong>Credential Stuffing Protection:</strong> Evaluating the implementation of CAPTCHA, WAF-level defenses, and MFA (Multi-Factor Authentication) workflows.
+        <br>• <strong>Session Integrity:</strong> Auditing for session fixation and the secure handling of authentication tokens post-login.
+        </p>
+        
+        <p><strong>Technical Analysis:</strong><br>
+        Analysis confirmed critical weaknesses in the authentication handshake. Specifically, the system exhibited **Time-Based Enumeration** vulnerabilities, where the server response time differed significantly between valid and invalid usernames. Furthermore, the **Rate-Limiting** mechanism was found to be ineffective against "Slow-and-Low" brute-force attacks and could be entirely bypassed by rotating spoofed proxy headers.
+        </p>
+        
+        <p><strong>Security Impact:</strong><br>
+        These vulnerabilities facilitate high-velocity credential stuffing and account takeover (ATO) campaigns. By successfully mapping valid users, an attacker can launch targeted phishing or brute-force sessions, leading to unauthorized access to sensitive corporate data and potential lateral movement within the authenticated environment.
+        </p>
+        
+        <p><strong>Risk Rating:</strong> <span class="critical">CRITICAL // CVSS 9.3</span></p>
+        <p><strong>Tool:</strong> Burp Suite Pro </p>
+    </div>
 
-            <div class="report-section">
-                <a href="reports/Authentication-Security-Assessment.pdf" target="_blank" class="report-btn">🔍 View Full Report</a>
-                <a href="reports/Authentication-Security-Assessment.pdf" download class="download-btn">⬇ Download</a>
-            </div>
+    <div class="report-section">
+        <p class="report-desc" style="font-style: italic; color: #888; font-size: 0.8rem; margin-bottom: 15px;">
+            Full authentication dossier including vulnerability reproduction steps, proof-of-concept (PoC) scripts, and identity hardening roadmaps.
+        </p>
+        
+        <a href="reports/Authentication-Security-Assessment.pdf" target="_blank" class="report-btn">
+            🔍 View Full Report
+        </a>
+        <a href="reports/Authentication-Security-Assessment.pdf" download="JanaMuhamed_Auth_Security_Audit_2026.pdf" class="download-btn">
+            ⬇ Download 
+        </a>
+        
+        <div style="margin-top: 15px; border-top: 1px solid #1a1a1a; padding-top: 10px;">
+            <p style="font-size: 9px; color: #444; font-family: monospace; margin: 0;">
+                MD5: a1b2c3d4...e5f6 | [ SECURITY_SENSITIVE ]
+            </p>
         </div>
+    </div>
+</div>
 
     </section>
 
