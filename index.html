@@ -3,10 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jana Muhamed | Portfolio </title>
+<title>Jana Muhamed | Cybersecurity Portfolio</title>
 
 <style>
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0b1220; color: #e6edf3; scroll-behavior: smooth; }
+:root {
+    --bg-dark: #050505;
+    --card-bg: #0d0d0d;
+    --neon-cyan: #00f2ff;
+    --neon-blue: #1f6feb;
+    --terminal-green: #00ff41;
+    --text-gray: #aab2bb;
+    --border-color: #1f2a44;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'JetBrains Mono', 'Fira Code', monospace; 
+    background-color: var(--bg-dark);
+    /* Cyber Grid Background */
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #e6edf3; 
+    scroll-behavior: smooth; 
+}
 
 nav {
     position: fixed;
@@ -17,42 +38,39 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
-    background: rgba(10,20,40,0.8);
-    backdrop-filter: blur(12px);
+    background: rgba(5, 5, 5, 0.95);
+    border-left: 1px solid var(--neon-cyan);
+    backdrop-filter: blur(15px);
     z-index: 1000;
+    box-shadow: -5px 0 20px rgba(0, 242, 255, 0.15);
 }
 
 nav a {
-    color: #e6edf3;
+    color: var(--text-gray);
     margin: 15px 0;
     text-decoration: none;
     display: block;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #58a6ff;
-}
-
-nav a {
-    color: #e6edf3;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #58a6ff;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    transform: translateX(-8px);
 }
 
 .container {
     max-width: 900px;
-   margin-right: 240px; /* space for sidebar */
-    padding: 120px 20px;
+    margin-right: 240px; 
+    padding: 80px 40px;
 }
 
 .fade-up {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade-up.show {
@@ -60,53 +78,105 @@ nav a:hover {
     transform: translateY(0);
 }
 
+/* Section Headings */
+h1 { 
+    font-size: 52px; 
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+h2 {
+    color: var(--neon-cyan);
+    border-left: 3px solid var(--neon-cyan);
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-top: 50px;
+}
+
+/* Custom Card Styling */
 .card {
-    background: #111a2e;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border: 1px solid #1f2a44;
+    background: var(--card-bg);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: #1f6feb;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+    transform: scale(1.01);
 }
 
-.btn {
-    background: linear-gradient(135deg, #1f6feb, #388bfd);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    display: inline-flex;
-    text-decoration: none;
-    font-weight: 600;
-}
-
+/* Skills/Tags */
 .skills span {
-    background: #1a2742;
-    padding: 6px 12px;
-    border-radius: 20px;
+    background: #111;
+    color: var(--neon-cyan);
+    border: 1px solid #222;
+    padding: 6px 14px;
+    border-radius: 2px;
     margin: 5px;
     display: inline-block;
+    font-size: 0.8rem;
+    transition: 0.3s;
 }
 
 .skills span:hover {
-    background: #1f6feb;
+    background: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 10px var(--neon-cyan);
 }
 
-h1 { font-size: 44px; }
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
 
-h2 {
-    border-left: 4px solid #1f6feb;
-    padding-left: 10px;
+ul li::before {
+    content: "[!] ";
+    color: var(--terminal-green);
+    font-weight: bold;
+}
+
+.sidebar {
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px dashed var(--neon-cyan);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: var(--terminal-green);
+}
+
+p {
+    line-height: 1.8;
+    color: var(--text-gray);
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    color: #8b949e;
+    padding: 100px 0 50px;
+    color: #444;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+}
+
+/* Terminal Prompt Effect */
+.command-line::before {
+    content: "guest@jana_portfolio:~$ ";
+    color: var(--terminal-green);
 }
 </style>
 </head>
@@ -114,113 +184,79 @@ footer {
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="certificates.html">Certificates</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">// 01_HOME</a>
+    <a href="projects.html">// 02_PROJECTS</a>
+    <a href="certificates.html">// 03_CERTS</a>
+    <a href="contact.html">// 04_CONTACT</a>
 </nav>
 
 <div class="container">
 
-    <div class="fade-up">
+    <header class="fade-up">
         <h1>Jana Muhamed</h1>
-        <p>Cybersecurity Engineer | Penetration Tester</p>
-    </div>
+        <p class="command-line">Security Engineer | Penetration Tester</p>
+    </header>
 
     <section id="about" class="fade-up">
-        <h2>Description</h2>
-        <p> I am a cybersecurity specialist focused on helping individuals and businesses improve the security of their websites and online systems.
+        <h2>_Description</h2>
+        <p>I am a cybersecurity specialist focused on helping individuals and businesses improve the security of their websites and online systems.</p>
+        <p>I provide security testing services to identify common vulnerabilities that could put your data or users at risk. My goal is to help you understand potential weaknesses and provide clear recommendations to fix them.</p>
 
-I provide security testing services to identify common vulnerabilities that could put your data or users at risk. My goal is to help you understand potential weaknesses and provide clear recommendations to fix them.
+        <div class="sidebar">
+            <h3>[ MODULE: WHAT_I_OFFER ]</h3>
+            <p>
+                • Website security testing<br>
+                • Vulnerability assessment<br>
+                • Clear and simple security reports<br>
+                • Practical recommendations for improvement
+            </p>
+        </div>
 
-
-    <div class="sidebar">
-        <h3>What I Offer</h3>
-        <ul>
-            <li>Website security testing</li>
-            <li>Vulnerability assessment</li>
-            <li>Clear and simple security reports</li>
-            <li>Practical recommendations for improvement</li>
-        </ul>
-    </div>
-
-I use industry-standard tools and techniques to ensure accurate and reliable results.
-
-I am committed to delivering high-quality work, clear communication, and on-time delivery.
-
-Your security is my priority.
-        </p>
+        <p>I use industry-standard tools and techniques to ensure accurate and reliable results. I am committed to delivering high-quality work, clear communication, and on-time delivery.</p>
+        <p style="color: var(--neon-cyan);">Your security is my priority.</p>
     </section>
 
-        <section class="fade-up">
-        <h2>Skills</h2>
+    <section class="fade-up">
+        <h2>_Core_Skills</h2>
         <div class="skills">
             <span>Network Security</span>
-         <span>Web Application Security</span>
-             <span>Network Security</span>
-             <span>Information Security</span>
-             <span>Network Engineering</span>
-
+            <span>Web Application Security</span>
+            <span>Information Security</span>
+            <span>Network Engineering</span>
         </div>
     </section>
 
     <section class="fade-up">
-        <h2>Vulnerabilities worked on </h2>
+        <h2>_Vulnerabilities_Exploited</h2>
         <div class="card">
             <ul>
                 <li>SQL Injection (SQLi)</li>
                 <li>Cross-Site Scripting (XSS)</li>
-                <li>Cross-Site Request Forgery (CSRF)</li>
                 <li>Authentication Bypass</li>
                 <li>Command Injection</li>
                 <li>Local File Inclusion (LFI)</li>
                 <li>Remote File Inclusion (RFI)</li>
                 <li>Broken Access Control</li>
-                <li>Security Misconfiguration</li>
-                <li>Insecure Deserialization</li>
                 <li>Session Hijacking</li>
+                <li>CSRF</li>
                 <li>Directory Traversal</li>
             </ul>
         </div>
     </section>
 
     <section class="fade-up">
-        <h2>Professional Strengths</h2>
-        <div class="card">
-            <p><strong>Penetration Testing</strong><br>Identifying and exploiting vulnerabilities.</p>
-            <p><strong>Vulnerability Assessment</strong><br>Detecting system weaknesses.</p>
-            <p><strong>Security Mindset</strong><br>Thinking like an attacker.</p>
-            <p><strong>Network Security</strong><br>Analyzing traffic and protocols.</p>
-        </div>
-    </section>
-
-    <section class="fade-up">
-        <h2>Programming Languages</h2>
+        <h2>_Arsenal & Languages</h2>
         <div class="skills">
-            <span>C</span>
-            <span>C++</span>
-            <span>HTML</span>
-            <span>Java</span>
+            <span>C</span> <span>C++</span> <span>Java</span> <span>HTML</span>
+            <span style="border-color: var(--terminal-green); color: var(--terminal-green);">Wireshark</span>
+            <span style="border-color: var(--terminal-green); color: var(--terminal-green);">Nmap</span>
+            <span style="border-color: var(--terminal-green); color: var(--terminal-green);">Burp Suite</span>
+            <span style="border-color: var(--terminal-green); color: var(--terminal-green);">Metasploit</span>
         </div>
     </section>
-
-    <section class="fade-up">
-        <h2>Tools</h2>
-        <div class="skills">
-            <span>Wireshark</span>
-            <span>Nmap</span>
-            <span>Burp Suite</span>
-            <span>Kali Linux</span>
-            <span>Metasploit</span>
-        </div>
-    </section>
-
-
-
-    
 
     <footer>
-        © 2026 Jana Muhamed
+        [ STATUS: SECURE ] &copy; 2026 Jana Muhamed
     </footer>
 
 </div>
@@ -234,7 +270,7 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('show');
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
 elements.forEach(el => observer.observe(el));
 </script>
