@@ -240,11 +240,13 @@ footer {
 
         <div class="card">
             <h3>🔑 Authentication Security Assessment & Brute Force Analysis</h3>
-            <p class="subtitle">Evaluation of login robustness and rate-limiting defenses.</p>
+            <p class="subtitle">    A comprehensive security assessment was conducted on the authentication mechanisms of the target application. 
+    The objective was to evaluate the robustness of brute force protection, account enumeration defenses, and login request handling.</p>
             
             <div class="finding">
                 <p><strong>Analysis:</strong> Identified inadequate brute force protection and account enumeration via response timing and error message discrepancies.</p>
-                <p><strong>Impact:</strong> Attackers could bypass rate-limiting and gain unauthorized access to user accounts through password spraying.</p>
+                <p><strong>Impact:</strong>  These vulnerabilities enable attackers to perform efficient brute force attacks, enumerate valid users, and potentially gain unauthorized access to user accounts. 
+      This can lead to full account compromise and further exploitation of the application.</p>
                 <p><strong>Risk Level:</strong> <span class="critical">CRITICAL_VULN</span></p>
             </div>
 
