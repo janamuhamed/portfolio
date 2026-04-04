@@ -12,7 +12,6 @@
             --neon-blue: #1f6feb;
             --text-gray: #aab2bb;
             --terminal-green: #00ff41;
-            --critical-red: #ff3131;
         }
 
         body { 
@@ -27,6 +26,7 @@
             overflow-x: hidden;
         }
 
+        /* Side Navigation */
         nav {
             position: fixed; right: 0; top: 0; height: 100vh; width: 220px;
             display: flex; flex-direction: column; padding: 30px 20px;
@@ -39,13 +39,15 @@
 
         .container { max-width: 900px; margin-right: 240px; padding: 80px 40px; }
 
+        /* Header Section */
         .header-box { border-bottom: 1px solid #222; padding-bottom: 20px; margin-bottom: 50px; }
         h2 { color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 4px; font-size: 1.8rem; margin: 0; }
         .status-line { font-size: 0.8rem; color: var(--terminal-green); margin-top: 10px; }
 
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        /* Layout Grid */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 
-        /* Professional Info Card */
+        /* Info Cards */
         .info-card {
             background: var(--card-bg);
             border: 1px solid #1a1a1a;
@@ -55,19 +57,34 @@
         }
 
         .info-card h3 { font-size: 0.9rem; color: var(--neon-cyan); margin-top: 0; text-transform: uppercase; }
-        .info-card p { font-size: 0.85rem; color: var(--text-gray); }
+        .info-card p { font-size: 0.85rem; color: var(--text-gray); line-height: 1.6; }
 
-        /* Social Link Styling */
+        /* Direct Contact Elements (Email/Phone) */
+        .contact-box {
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px dashed #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+        .contact-box:hover { border-color: var(--terminal-green); background: rgba(0, 255, 65, 0.05); }
+
+        /* Platform Link Styling */
         .platform-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
+            padding: 18px;
             background: #111;
             border: 1px solid #222;
             text-decoration: none;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             transition: 0.3s;
             font-size: 0.85rem;
         }
@@ -75,29 +92,18 @@
         .platform-link:hover {
             border-color: var(--neon-cyan);
             background: rgba(0, 242, 255, 0.05);
-            transform: scale(1.02);
+            transform: translateX(5px);
         }
 
-        .platform-tag { font-size: 0.7rem; color: #555; text-transform: uppercase; }
+        .platform-tag { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Email Copy Box */
-        .email-box {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px dashed #333;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        .email-box:hover { border-color: var(--terminal-green); }
+        footer { text-align: center; padding: 80px 0; color: #333; font-size: 0.75rem; font-family: monospace; letter-spacing: 2px; }
 
-        footer { text-align: center; padding: 60px; color: #333; font-size: 0.75rem; font-family: monospace; }
-
+        /* Mobile Optimization */
         @media (max-width: 768px) {
             .contact-grid { grid-template-columns: 1fr; }
             .container { margin-right: 0; padding: 40px 20px; }
-            nav { width: 100%; height: auto; position: relative; border-left: none; border-bottom: 1px solid var(--neon-cyan); }
+            nav { display: none; } /* Or implement a mobile menu */
         }
     </style>
 </head>
@@ -107,7 +113,7 @@
     <a href="index.html">// 01 HOME</a>
     <a href="projects.html">// 02 PROJECTS</a>
     <a href="certificates.html">// 03 CERTIFICATES</a>
-    <a href="contact.html" style="color: var(--neon-cyan);">// 04 CONTACT</a>
+    <a href="contact.html" style="color: var(--neon-cyan); border-right: 2px solid var(--neon-cyan);">// 04 CONTACT</a>
 </nav>
 
 <div class="container">
@@ -117,38 +123,47 @@
     </div>
 
     <div class="contact-grid">
+        
         <div class="info-card">
             <h3>Direct Engagement</h3>
             <p>I am currently available for freelance penetration testing, vulnerability assessments, and infrastructure security audits.</p>
-            <p>For urgent security inquiries or professional proposals, please use the direct email or encrypted professional channels provided.</p>
             
-            <div class="email-box" onclick="copyEmail()">
-                <span id="email-text">janaamuhamed008@gmail.com</span>
-                <span style="font-size: 10px; color: var(--terminal-green);">[ COPY ]</span>
+            <div class="contact-box" onclick="copyValue('janaamuhamed008@gmail.com', 'Email')">
+                <span id="email-text" style="font-size: 0.8rem;">janaamuhamed008@gmail.com</span>
+                <span style="font-size: 9px; color: var(--terminal-green);">[ COPY_MAIL ]</span>
             </div>
-            <p style="font-size: 10px; color: #444; margin-top: 10px;">Response Time: < 24 Hours</p>
+
+            <a href="tel:+201151428277" class="contact-box" style="margin-top: 10px; border-style: solid;">
+                <span style="font-size: 0.8rem;">+20 115 142 8277</span>
+                <span style="font-size: 9px; color: var(--neon-cyan);">[ CALL_DIRECT ]</span>
+            </a>
+            
+            <p style="font-size: 10px; color: #444; margin-top: 20px; font-family: monospace;">
+                <span style="color: var(--terminal-green);">●</span> Response Time: &lt; 24 Hours <br>
+                <span style="color: var(--neon-cyan);">●</span> Timezone: Cairo, Egypt (GMT+2)
+            </p>
         </div>
 
         <div>
             <a href="https://www.linkedin.com/in/janamuhamed" target="_blank" class="platform-link">
                 <span>LinkedIn</span>
-                <span class="platform-tag">Professional Network</span>
+                <span class="platform-tag">Network</span>
             </a>
             
             <a href="https://www.upwork.com/freelancers/~01abae447b7448b0d9" target="_blank" class="platform-link">
                 <span>Upwork</span>
-                <span class="platform-tag">Contracting / ESCROW</span>
+                <span class="platform-tag">Contracting</span>
             </a>
             
             <a href="https://www.freelancer.com/u/janamuhamed1" target="_blank" class="platform-link">
                 <span>Freelancer</span>
-                <span class="platform-tag">Freelance Projects</span>
+                <span class="platform-tag">Bidding</span>
             </a>
 
             <div style="margin-top: 30px; border-top: 1px solid #1a1a1a; padding-top: 20px;">
-                <p style="font-size: 0.75rem; color: #444;">
+                <p style="font-size: 0.75rem; color: #444; font-family: monospace; line-height: 1.8;">
                     MD5_CONTACT_HASH: d41d8cd98f00b204e9800998ecf8427e<br>
-                    LOCAL_TIME: <span id="time"></span> (GMT+2)
+                    SESSION_TIME: <span id="time" style="color: #666;"></span>
                 </p>
             </div>
         </div>
@@ -160,20 +175,23 @@
 </div>
 
 <script>
-    // Copy Email Function
-    function copyEmail() {
-        const email = document.getElementById('email-text').innerText;
-        navigator.clipboard.writeText(email);
-        alert('Email address copied to clipboard.');
+    // Copy to Clipboard Function
+    function copyValue(text, type) {
+        navigator.clipboard.writeText(text);
+        alert(type + ' copied to clipboard.');
     }
 
-    // Dynamic Time
-    function updateTime() {
+    // Live System Clock
+    function updateClock() {
         const now = new Date();
-        document.getElementById('time').innerText = now.toLocaleTimeString();
+        const timeStr = now.toLocaleTimeString();
+        const timeDisplay = document.getElementById('time');
+        if(timeDisplay) {
+            timeDisplay.innerText = timeStr;
+        }
     }
-    setInterval(updateTime, 1000);
-    updateTime();
+    setInterval(updateClock, 1000);
+    updateClock();
 </script>
 
 </body>
